@@ -1,0 +1,117 @@
+<!-- <html>
+<head>
+   <style>
+      button {
+         height: 35px;
+         width: 100px;
+      }
+   </style>
+</head>
+<body>
+
+   <button onclick = "changeFontColor()"><div id = "fonts"> Click the button. </div></button>
+   <h1 id="h1" >change color</h1>
+   <script>
+ 
+
+      function changeFontColor() {
+         let h1 = document.getElementById("h1");
+         let color = h1.style.color;
+         let fonts = h1.style.fontFamily;
+         if (color == "red") { 
+            h1.style.color = 'green';
+            h1.style.fontFamily = 'sans-serif'
+         } else {
+            h1.style.color = 'red';
+            h1.style.fontFamily = 'Times New Roman'
+         }
+      }
+   </script>
+</body>
+</html> -->
+<!-- <html>
+    <body>
+        <p><a id="Click" target= "This is my Git hub account" 
+        href="https://github.com/">Git Hub</a></p>
+        <script>
+           var myVal = document.getElementById("Click").target;
+           document.write("Value of target attribute: "+myVal);
+        </script>
+     </body>
+     
+</html> -->
+<!-- <html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<p>Click the button to add a new row.</p>
+
+<table id="myTable">
+  <tr>
+    <td>R1 C1</td>
+    <td>R1 C2</td>
+  </tr>
+  <tr>
+    <td>R2 C1</td>
+    <td>R2 C2</td>
+  </tr>
+  <tr>
+    <td>R3 C1</td>
+    <td>R3 C2</td>
+  </tr>
+</table>
+<br>
+
+<button type="button" onclick="myFunction()">Click on it. </button>
+
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var C1 = row.insertCell(0);
+  var C2 = row.insertCell(1);
+  C1.innerHTML = "NEW C1";
+  C2.innerHTML = "NEW C2";
+}
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API</title>
+  </head>
+  <body>
+    <h1>Random User Data</h1>
+    <div id="user"></div>
+  </body>
+
+
+<script>
+fetch('https://randomuser.me/api/')
+  .then(response => response.json())
+  .then(data => {
+    const user = data.results[0];
+    const name = `${user.name.first} ${user.name.last}`;
+    const email = user.email;
+    const phone = user.phone;
+    const gender = user.gender;
+    const loc = `${user.location.city} ${user.location.country}`;
+    const userDiv = document.querySelector('#user');
+    userDiv.innerHTML = `
+      <h2>${name}</h2>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Gender:</strong> ${gender}</p>
+      <p><strong>Loc:</strong> ${loc}</p>
+    `;
+  });
+
+</script>
