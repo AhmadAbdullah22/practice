@@ -8,7 +8,13 @@
 # print(p.y)
 
 from flask import Flask
+
 app = Flask(__name__)
+
 @app.route("/")
 def index():
     return "My name is Ahmad."
+
+@app.route("/david")
+def david():
+    return "Hello, Ahmad!"
