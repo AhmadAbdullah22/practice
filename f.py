@@ -1,7 +1,8 @@
-from flask import Flask, render_py
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def index ():
-    return render_py("T.html")
+    headline = "Hello, Hammad"
+    return render_template("AB.html", headline = headline)
